@@ -1,0 +1,49 @@
+//HTML code
+<body>
+<div>
+<button id="prev">&#10096</button>
+<img id="slider" src="https://www.sololearn.com/uploads/slider/1.jpg"/>
+<button id="next"> &#10095</button>
+</div>
+</body>
+
+//Css code
+button{
+  color:black;
+  float:none;
+  height:20px;
+ border: black solid 10px;
+  position:relative;
+}
+img{
+  width:350px;
+  height:200px;
+  position:relative;
+  border:black dashed 10px;
+  }
+  
+  //Javascript code with event listener
+  
+  var images=['https://www.sololearn.com/uploads/slider/1.jpg',
+ 'https://www.sololearn.com/uploads/slider/2.jpg',
+ 'https://www.sololearn.com/uploads/slider/3.jpg'];
+var num=0;
+function next(){num++;
+  if(num>=images.length){num=0;}
+slider.src=images[num];}
+
+function previous(){num--;
+  if(num<0){num=images.length-1;}
+  slider.src=images[num];}
+
+//add eventlistener here
+window.onload=function(){
+  var slider=document.getElementById("slider");
+  var nextb=document.getElementById("next");
+  var previousb=document.getElementById("previous");
+  nextb.addEventListener("click",next);
+  prevb.addEventlistener("click",previous);
+ }
+
+
+
